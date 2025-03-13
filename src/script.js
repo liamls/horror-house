@@ -8,7 +8,13 @@ import { Sky } from "three/examples/jsm/Addons.js";
  */
 // Textures
 
-const textureLoader = new THREE.TextureLoader();
+const loadingScreen = document.getElementById('loading-screen');
+const loadingManager = new THREE.LoadingManager(() => {
+    console.log("is loaded")
+    loadingScreen.style.display = 'none';
+});
+
+const textureLoader = new THREE.TextureLoader(loadingManager);
 
 //Floor
 const floorAlphaTexture = textureLoader.load("./floor/alpha.jpg");
@@ -309,8 +315,8 @@ const camera = new THREE.PerspectiveCamera(
     100
 );
 camera.position.x = 3;
-camera.position.y = 4;
-camera.position.z = 8;
+camera.position.y = 5;
+camera.position.z = 9;
 camera.lookAt(house)
 scene.add(camera);
 
