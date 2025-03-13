@@ -108,7 +108,7 @@ sky.material.uniforms['mieDirectionalG'].value = 0.95
 sky.material.uniforms['sunPosition'].value.set(0.3, -0.038, -0.95)
 sky.scale.set(50, 50, 50)
 
-scene.fog = new THREE.FogExp2('#04343f', 0.1)
+scene.fog = new THREE.FogExp2('#37535A', 0.025)
 /**
  * House
  */
@@ -314,10 +314,9 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     100
 );
-camera.position.x = 3;
+camera.position.x = -2;
 camera.position.y = 5;
-camera.position.z = 9;
-camera.lookAt(house)
+camera.position.z = 15;
 scene.add(camera);
 
 // Controls
